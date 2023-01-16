@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/normalize.css" />
     <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
     <title>Task Mastery</title>
   </head>
   <body>
@@ -19,20 +25,18 @@
           name="taskinput"
           id="taskinput"
           placeholder="Enter task"
+          required
         />
         <input type="submit" value="add" id="submit" />
       </form>
       <section id="task-container">
-        <div class="tasks">
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam
-            possimus dolorum itaque minima!
-          </p>
+        <div class="tasks template">
+          <p></p>
           <div class="task-logos">
-            <div class="img1">
+            <div class="img1 complete">
               <img src="./assets/images/icons8-checkmark-48.svg" alt="" />
             </div>
-            <div class="img2">
+            <div class="img2 remove">
               <img src="./assets/images/icons8-trash-can.svg" alt="" />
             </div>
           </div>

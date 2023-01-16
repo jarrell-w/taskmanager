@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: "Roboto", sans-serif;
+}
 header,
 main,
 #task-container {
@@ -18,17 +21,18 @@ header {
 }
 .tasks {
   margin: 10px auto;
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border: 1px solid black;
+  border: 2px solid rgb(116, 183, 221);
   border-radius: 5px;
   width: 450px;
 }
 .tasks p {
   margin: 0 10px;
   max-width: 70%;
+  font-size: 1.25rem;
 }
 .task-logos {
   display: flex;
@@ -38,7 +42,15 @@ header {
 .task-logos div {
   width: 30px;
 }
+.task-logos div:hover {
+  color: grey;
+}
 .task-logos div img {
   max-width: 100%;
   height: auto;
+}
+
+.task-logos div img:hover,
+#submit:hover {
+  cursor: pointer;
 }

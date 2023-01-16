@@ -3,6 +3,12 @@ const taskInput = document.getElementById("taskinput");
 const form = document.getElementById("form");
 const taskContainer = document.getElementById("task-container");
 const getTasks = document.querySelector(".tasks");
+getTasks
+  .querySelector(".task-logos")
+  .querySelector(".remove")
+  .addEventListener("click", (e) => {
+    e.target.parentNode.parentNode.parentNode.remove();
+  });
 
 // Get the stored tasks from local storage, or an empty array if there are none
 let storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -14,6 +20,9 @@ const addTask = (task) => {
 
   // Set the task text on the new task element
   newTask.querySelector("p").textContent = task;
+  newTask.style.display = "flex";
+  //add remove todo items
+  removeItems(newTask);
 
   // Add the new task to the task container
   taskContainer.appendChild(newTask);
@@ -44,7 +53,17 @@ window.onload = () => {
   // Loop through the stored tasks and add them to the page
   for (const task of storedTasks) {
     const newTask = getTasks.cloneNode(true);
+    newTask.style.display = "flex";
+    removeItems(newTask);
     newTask.querySelector("p").textContent = task.task;
     taskContainer.appendChild(newTask);
   }
+};
+const removeItems = (task) => {
+  task
+    .querySelector(".task-logos")
+    .querySelector(".remove")
+    .addEventListener("click", (e) => {
+      e.target.parentNode.parentNode.parentNode.remove();
+    });
 };
