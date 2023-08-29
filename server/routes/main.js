@@ -26,7 +26,15 @@ router.post("/submit", (req, res) => {
         title,
         body
     }
-    Task.create(data);
+    try {
+      Task.create(data);  
+      res.status(200)
+      res.redirect('/')
+    } catch (e) {
+        console.log(e)
+        res.sendStatus(400).send('Failed to send to database')
+    }
+    
 } )
 
 
