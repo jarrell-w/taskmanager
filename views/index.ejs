@@ -1,0 +1,15 @@
+<section>
+    <form action="/submit" method="post" id="taskform">
+        <label for="title">Task title</label>
+        <input type="text" placeholder="title" id="title" name="title">
+        <label for="description">Task description</label>
+        <input type="text" placeholder="description" id="description" name="body">
+        <input type="submit" id="submitform" value="Submit">
+    </form>
+    <ul>
+        <li><% data.forEach(element => { %>
+            <h2><%= element.title %></h2>
+            <p><%= element.body %></p>
+        <% }) %></li>
+    </ul>
+</section>
