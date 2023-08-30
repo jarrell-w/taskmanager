@@ -1,9 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const Task = require('../models/task')
-const bodyParser = require('body-parser'); // Import bodyParser
 
-//add body parser so it will only parse url encoded bodies.
+//Database model
+const Task = require('../models/task')
+//This will allow the body to be parsed 
+// with the keys being given by the "name" property // Import bodyParser
+const bodyParser = require('body-parser');
+//set route to use middleware that handles form data, extended
+//is optional to handle more complex data. 
 router.use(bodyParser.urlencoded({ extended: true }))
 
 
