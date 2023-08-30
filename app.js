@@ -7,12 +7,13 @@ const expressLayouts = require('express-ejs-layouts');
 const connectDB = require('./server/config/db');
 const bodyParser = require('body-parser')
 
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 connectDB();
 
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(expressLayouts);
 app.use(express.static('public'));
 app.set('layout', './layouts/main');

@@ -1,15 +1,7 @@
 const express = require('express');
 const router = express.Router();
-
-//Database model
+//Sample Database model
 const Task = require('../models/task')
-//This will allow the body to be parsed 
-// with the keys being given by the "name" property // Import bodyParser
-const bodyParser = require('body-parser');
-//set route to use middleware that handles form data, extended
-//is optional to handle more complex data. 
-router.use(bodyParser.urlencoded({ extended: true }))
-
 
 router.get("/", async (req, res) => {
     locals = {
@@ -23,6 +15,7 @@ router.get("/", async (req, res) => {
         console.log(e)
     }
 })
+
 router.post("/submit", (req, res) => {
     const {title,body} = req.body
     console.log(title, body)
@@ -40,7 +33,6 @@ router.post("/submit", (req, res) => {
     }
     
 } )
-
 
 //Exporting router:
 module.exports = router
